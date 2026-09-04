@@ -22,6 +22,36 @@
     <section id="form">
       <h2>登记信息</h2>
     </section>
+
+    <form action="#" method="get">
+  <p>
+    <label for="name">姓名： </label>
+    <input type="text" id="name" name="name" placeholder="请输入你的名字" required>
+  </p>
+  <p>
+    <label for="phone">联系电话： </label>
+    <input type="tel" id="phone" name="phone" placeholder="请输入电话号码" pattern="[0-9]{11}" required>
+  </p>
+  <p>借阅时间</p>
+  <p>
+    <label for="date">日期： </label>
+    <input type="date" id="date" name="date">
+  </p>
+  <p>归还时间</p>
+  <p>
+    <label><input type="radio" name="deadline" value="一个月之内">一个月之内</label>
+    <label><input type="radio" name="deadline" value="一周之内">一周之内</label>
+  </p>
+  <p>是否有什么建议？</p>
+  <p>
+    <label for="advice">具体建议</label><br>
+    <textarea id="advice" name="advice" rows="4" maxlength="200" placeholder="请给予我们宝贵的建议"></textarea>
+  </p>
+  <p>
+    <button type="submit">登记完成</button>
+  </p>
+</form>
+
   </main>
   <footer>
     <p>自主实践任务</p>
