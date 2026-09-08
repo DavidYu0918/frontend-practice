@@ -9,9 +9,9 @@
 
 <body>
     <header>
-        <div>
+        <div class="nav-wrap">
             <a href="#">前端课程墙</a>
-            <nav>
+            <nav class="main-nav">
                 <a href="#courses">全部课程</a>
                 <a href="#about">关于</a>
             </nav>
@@ -21,28 +21,24 @@
     <main>
         <section id="courses">
             <h2>全部课程</h2>
-            <div>
-                <!--卡片下一步填写-->
+            <div class="card-grid">
+                <article class="course-card">
+                    <h3>HTML入门</h3>
+                    <p>结构与语义，页面一切的起点。</p>
+                    <a href="#">查看详情</a>
+                </article>
+                <article class="course-card">
+                    <h3>CSS布局</h3>
+                    <p>Flex、Grid与响应式设计。</p>
+                    <a href="#">查看详情</a>
+                </article>
+                <article class="course-card">
+                    <h3>JavaScript基础</h3>
+                    <p>让页面动起来的第一门语言</p>
+                    <a href="#">查看详情</a>
+                </article>
             </div>
         </section>
-
-        <div>
-            <article>
-                <h3>HTML入门</h3>
-                <p>结构与语义，页面一切的起点。</p>
-                <a href="#">查看详情</a>
-            </article>
-            <article>
-                <h3>CSS布局</h3>
-                <p>Flex、Grid与响应式设计。</p>
-                <a href="#">查看详情</a>
-            </article>
-            <article>
-                <h3>JavaScript基础</h3>
-                <p>让页面动起来的第一门语言</p>
-                <a href="#">查看详情</a>
-            </article>
-        </div>
         
     </main>
     <footer><p>课程演示案例·纯CSS版</p></footer>
