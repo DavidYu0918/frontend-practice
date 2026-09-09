@@ -4,51 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>周杰伦·影音推荐</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
         <h1>JayChou</h1>
     </header>
     <nav class="navbar">
-        <a href="#" class="album">专辑</a>
-        <a href="#" class="live">演唱会</a>
-        <a href="#" class="movies">电影</a>
+        <a href="#album">专辑</a>
+        <a href="#live">演唱会</a>
+        <a href="#movies">电影</a>
     </nav>
 
     <main>
         <div id="album">
             <h2>专辑</h2>
-            <div class="album-card">
-                <h4>JayChou(同名专辑)</h4>
-                <p>千禧年的惊雷炸响，少年以独有的腔调，开启华语乐坛新篇章</p>
-            </div>
-            <div class="album-card">
-                <h4>范特西</h4>
-                <p>Fantasy幻想，一张装满时空、异域、诡谲浪漫的音乐电影集</p>
-            </div>
-            <div class="album-card">
-                <h4>八度空间</h4>
-                <p>在八度音阶之外，拓展无限维度</p>
+            <div class="card-grid">
+                <div class="album-card">
+                    <h4>JayChou(同名专辑)</h4>
+                    <p>千禧年的惊雷炸响，少年以独有的腔调，开启华语乐坛新篇章</p>
+                </div>
+                <div class="album-card">
+                    <h4>范特西</h4>
+                    <p>Fantasy幻想，一张装满时空、异域、诡谲浪漫的音乐电影集</p>
+                </div>
+                <div class="album-card">
+                    <h4>八度空间</h4>
+                    <p>在八度音阶之外，拓展无限维度</p>
+                </div>
             </div>
         </div>
 
         <div id="live">
             <h2>演唱会</h2>
-            <div class="live-card">
-                <h4>The One</h4>
-                <p>一曲暗号，定格千禧年的音乐狂热</p>
-            </div>
-            <div class="live-card">
-                <h4>无与伦比</h4>
-                <p>一场无与伦比的视听盛宴，是无数人刻在心底的青春坐标</p>
+            <div class="card-grid">
+                <div class="live-card">
+                    <h4>The One</h4>
+                    <p>一曲暗号，定格千禧年的音乐狂热</p>
+                </div>
+                <div class="live-card">
+                    <h4>无与伦比</h4>
+                    <p>一场无与伦比的视听盛宴，是无数人刻在心底的青春坐标</p>
+                </div>
             </div>
         </div>
 
-        <div id="movies">
+        <div id="movies" class="card">
             <h2>电影</h2>
-            <div class="movies-card">
-                <h4>不能说的秘密</h4>
-                <p>穿越20年的琴音，秘密藏在落叶与旧琴房里</p>
+            <div class="card-grid">
+                <div class="movies-card">
+                    <h4>不能说的秘密</h4>
+                    <p>穿越20年的琴音，秘密藏在落叶与旧琴房里</p>
+                </div>
+                <div class="movies-card">
+                    <h4>天台爱情</h4>
+                    <p>老城区的天台，藏着烟火市井与热烈爱恋</p>
+                </div>
             </div>
         </div>
     </main>
