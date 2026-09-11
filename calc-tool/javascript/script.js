@@ -16,27 +16,55 @@ while (true) {
 }
 console.table(records);
 
-const clean_record = (records) = records.filter(r => r.amount >= 0);
+const clean_record = (list) => list.filter(r => r.amount >= 0);
 
 //根据name进行分组
-let category = {};
-for (let i = 0;i<records.length;++i) {
-    let record = records[i];
-    let name = record.name;
-    if (category[name] === undefined) {
-        category[name] = [];
-    }
+const group_name = (list) => {
+    const category = {};
+    for (let i = 0;i<records.length;++i) {
+        let record = records[i];
+        let name = record.name;
+        if (category[name] === undefined) {
+            category[name] = [];
+        }
 
-    category[name].push(record);
-}
-console.table('分组结果',category);
+        category[name].push(record);
+    }
+    return category;
+};
 
 //求出各组的总消费
-let sums = {};
-for (let name in category) {
-    let list = category[name];
-    let sum = 0;
-    sum = list.reduce((total,record) => total+=record.amount,0);
-    sums[name] = sum;
+const sum_categary = (category) => {
+    const sums = {};
+    for (const name in category) {
+        sums[name] = category[name].reduce((total,r) => total+r.amount,0);
+    }
+    return sums;
 }
-console.table('分类汇总',sums);
+
+
+const highest = (list) => list.reduce((max,r) => (r.amount > max.amount ? r : max));
+const total = (list) => list.reduce((sum,r) => sum+r.amount,0);
+
+const report = (list) => {
+    const valid = clean_record(list);
+    if (valid.length === 0) {
+        return '无有效消费记录';
+    }
+    const top = highest(valid);
+    const category = group_name(valid);
+    const sums = sum_categary(category);
+    const sumText = Object.keys(sums)
+        .map(name => `${name}${sums[name]}元`)
+        .join(' ');
+
+    return `总消费${total(valid)}元,单笔最高${top.amount}元(${top.name});
+    分类数量:${Object.keys(category).length};
+    分类汇总:${sumText}`;
+};
+
+try {
+    console.log(report(records));
+} catch(err){
+    console.error('报告生成失败:',err.message);
+}
