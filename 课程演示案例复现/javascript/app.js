@@ -4,8 +4,11 @@ const tip = document.querySelector('#tip');
 const list = document.querySelector('#task-list');
 const filters = document.querySelector('.filters');
 
-let tasks = [];
+let tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
 let currentFilter = 'all';
+
+//save()本地储存
+const save = () => localStorage.setItem('tasks',JSON.stringify(tasks));
 
 //render()函数作用，重新渲染
 const render = () => {
@@ -26,6 +29,8 @@ const render = () => {
         if (task.done) li.classList.add ('done');
         li.addEventListener('click',() => {
             task.done = !task.done;
+            save();
+            render();
         });
         list.appendChild(li);
     });
@@ -41,6 +46,7 @@ form.addEventListener('submit',(e) => {
     tasks.push({text:text,done:false});
     tip.textContent = '';
     input.value = '';
+    save();
     render();
 });
 
