@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电影清单</title>
+
+    <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body { font-family: sans-serif; max-width: 520px; margin: 24px auto; padding: 0 16px; }
+    li.done { text-decoration: line-through; color: #999;}
+    .tip { color: #c00; font-size: 14px; min-height: 20px;}
+    .filters { margin: 12px 0;}
+    .filters button { margin-right: 8px;}
+    .del { margin-left: 12px; cursor: pointer; color: #c00;}
+    </style>
+</head>
+<body>
+    <h1>电影清单</h1>
+    <form id="add-form">
+        <input id="title-input" type="text" placeholder="片名" />
+        <input id="director-input" type="text" placeholder="导演" />
+        <input id="rating-input" type="number" placeholder="评分" />
+        <button type="submit">添加</button>
+    </form>
+
+    <p id="tip" class="tip"></p>
+
+    <div class="filters">
+        <button data-filter="all">全部</button>
+        <button data-filter="active">未看</button>
+        <button data-filter="done">已看</button>
+    </div>
+    <ul id="movie-list"></ul>
+    <script src="app.js"></script>
+</body>
+</html>
