@@ -7,7 +7,9 @@ const list = document.querySelector('#movie-list');
 const filters = document.querySelector('.filters');
 
 let currentFilter = 'all';
-let tasks = [];
+let tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
+
+const save = () => localStorage.setItem('tasks', JSON.stringify(tasks));
 
 const render = () => { 
     list.innerHTML = '';
@@ -64,6 +66,7 @@ form.addEventListener('submit', (e) => {
     titleInput.value = '';
     directorInput.value = '';
     ratingInput.value = '';
+    save();
     render(); 
 });
 render();
