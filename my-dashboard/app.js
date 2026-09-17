@@ -122,4 +122,13 @@ const renderCards = (data) => {
     });
 };
 
+$('#cards').on('click', '.card', function () {
+    $(this).toggleClass('card-active');
+});
+
+window.addEventListener('resize',() => {
+    if (barChart) barChart.resize();
+    if (pieChart) pieChart.resize();
+});
+
 loadData();
