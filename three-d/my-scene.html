@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>虚拟展馆</title>
+    <script src="libs/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene>
+
+        <!-- 环境-->
+        <a-sky color="#000000"></a-sky>
+        <a-plane
+            position="0 0 -6" rotation="-90 0 0"
+            width="30" height="30" color="#555555">
+        </a-plane>
+
+        <!-- 环境光+展厅顶光-->
+        <a-light type="ambient" color="#ffffff" intensity="0.5"></a-light>
+        <a-light type="point" position="0 5 -6" color="#ffffff" intensity="0.8"></a-light>
+
+        <!-- 相机初始位-->
+        <a-camera position="0 1.6 0" look-controls="enabled: true" wasd-controls="enabled: true"></a-camera>
+
+    </a-scene>
+</body>
+</html>
