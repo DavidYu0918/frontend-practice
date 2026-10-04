@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冷兵器数据看板</title>
+    <link href="libs/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container py-4">
+
+    <!-- 导航栏 -->
+    <header id="homepage">
+        <nav class="navbar navbar-expand-md bg-body-secondary mb-4 rounded">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#homepage">冷兵器介绍</a>
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#homepage">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#statistics">数据看板</a></li>
+                    <li class="nav-item"><a class="nav-link" href="three-d/my-scene.html" target="_blank">冷兵器展示</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 清单 -->
+    <section id="weapon-panel" class="mb-5">
+        <h3>冷兵器清单</h3>
+        <form id="add-form" class="row g-2 align-items-center my-3">
+            <div class="col-auto">
+                <input id="name-input" class="form-control" type="text" placeholder="兵器名称" />
+            </div>
+            <div class="col-auto">
+                <input id="type-input" class="form-control" type="text" placeholder="类型（刀/剑/矛…）" />
+            </div>
+            <div class="col-auto">
+                <input id="weight-input" class="form-control" type="number" placeholder="重量（kg）" step="0.1" />
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-primary" type="submit">添加</button>
+            </div>
+        </form>
+
+        <p id="tip" class="tip"></p>
+
+        <div class="filters">
+            <button class="btn btn-outline-secondary btn-sm" data-filter="all">全部</button>
+            <button class="btn btn-outline-secondary btn-sm" data-filter="active">未入库</button>
+            <button class="btn btn-outline-secondary btn-sm" data-filter="done">已入库</button>
+        </div>
+        <ul id="weapon-list" class="list-group"></ul>
+    </section>
+
+    <!-- 数据看板 -->
+    <header id="statistics" class="mb-4">
+        <h3>冷兵器数据看板</h3>
+        <p class="text-muted" id="sub-title">数据来源：演示使用</p>
+    </header>
+
+    <p id="status" class="alert alert-warning"></p>
+
+    <section class="row g-3 mb-4" id="cards"></section>
+
+    <section class="row g-3 mb-4">
+        <div class="col-lg-6">
+            <h5>各类型的重量对比（ECharts 柱状图）</h5>
+            <div id="bar-chart" class="chart-box"></div>
+        </div>
+        <div class="col-lg-6">
+            <h5>各类型的产量变化（Chart.js 折线图）</h5>
+            <div class="chart-box"><canvas id="line-chart"></canvas></div>
+        </div>
+    </section>
+
+    <section class="row g-3 mb-4">
+        <div class="col-12">
+            <h5>各类型累计占比（ECharts 饼图）</h5>
+            <div id="pie-chart" class="chart-box"></div>
+        </div>
+    </section>
+
+    <script src="libs/jquery-3.7.1.min.js"></script>
+    <script src="libs/bootstrap.bundle.min.js"></script>
+    <script src="libs/echarts.min.js"></script>
+    <script src="libs/chart.umd.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
