@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>冷兵器数据看板</title>
     <link href="libs/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .chart-box { height: 360px; }
+        #status { display: none; }
+        .card-active {
+            border: 2px solid #0d6efd;
+            box-shadow: 0 0 8px rgba(13, 110, 253, 0.4);
+        }
+        #weapon-panel li.done { text-decoration: line-through; color: #999; }
+        #weapon-panel .tip { color: #c00; font-size: 14px; min-height: 20px; }
+        #weapon-panel .filters { margin: 12px 0; }
+        #weapon-panel .filters button { margin-right: 8px; }
+    </style>
 </head>
 <body class="container py-4">
 
