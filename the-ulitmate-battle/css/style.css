@@ -1,0 +1,11 @@
+body {
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}

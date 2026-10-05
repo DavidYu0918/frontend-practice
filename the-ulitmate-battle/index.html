@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>校园自习室信息中心 - 首页</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-dark bg-primary px-3">
+        <span class="navbar-brand">校园自习室信息中心</span>
+        <div>
+        <a href="index.html" class="text-white me-3">首页</a>
+        <a href="rooms.html" class="text-white me-3">自习室</a>
+        <a href="statistics.html" class="text-white">数据统计</a>
+        </div>
+    </nav>
+
+    <div id="globalAlert" class="alert alert-danger d-none text-center mb-0"></div>
+
+    <div class="container mt-4">
+        <h1>这里是校园自习室信息中心</h1>
+        <p class="text-muted">在这里可以查看自习室的开放情况，还能看统计数据。</p>
+        <a href="rooms.html" class="btn btn-primary">自习室查询</a>
+        <a href="statistics.html" class="btn btn-primary">数据统计</a>
+    </div>
+
+    <!-- 卡片 -->
+    <div class="container mt-4">
+        <div class="row">
+        <div class="col-12 col-md-4 mb-3">
+            <div class="card text-center">
+            <div class="card-body">
+                <h3 id="statTotalRooms">--</h3>
+                <p>自习室总数</p>
+            </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 mb-3">
+            <div class="card text-center">
+            <div class="card-body">
+                <h3 id="statOpenRooms">--</h3>
+                <p>当前开放</p>
+            </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 mb-3">
+            <div class="card text-center">
+            <div class="card-body">
+                <h3 id="statTodayVisitors">--</h3>
+                <p>今日总人次</p>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3">
+        校园自习室信息中心 · 期末大作业
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
