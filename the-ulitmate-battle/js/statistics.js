@@ -20,17 +20,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
         }
 
-        // 两个图表 + 三维（各自再判断一次）
+        // 两个图表
         if (hasRooms) {
             drawBarChart(data.rooms);
         }
         if (hasWeekly) {
             drawLineChart(data.weeklyVisitors);
         }
-
-        // drawBarChart(data.rooms);
-        // drawLineChart(data.weeklyVisitors);
-        initThree();
 
     } catch (error) {
         showAlert("数据加载失败：" + error.message);
