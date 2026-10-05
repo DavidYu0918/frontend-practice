@@ -29,8 +29,8 @@
     <div class="container mt-3">
         <div class="row">
         <div class="col-12 col-md-4 mb-2">
-            <label class="form-label">楼栋</label>
-            <select id="filterBuilding" class="form-select">
+            <label class="form-label">楼层</label>
+            <select id="filterFloor" class="form-select">
             <option value="">全部</option>
             </select>
         </div>
@@ -54,15 +54,13 @@
         <thead class="table-primary">
             <tr>
             <th>名称</th>
-            <th>楼栋</th>
-            <th>容量</th>
+            <th>楼层</th>
             <th>状态</th>
             <th>开放时间</th>
-            <th>今日人次</th>
             </tr>
         </thead>
         <tbody id="roomTableBody">
-            <tr><td colspan="6" class="text-center text-muted">加载中...</td></tr>
+            <tr><td colspan="4" class="text-center text-muted">加载中...</td></tr>
         </tbody>
         </table>
 
